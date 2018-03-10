@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.5//EN"
+	"http://struts.apache.org/dtds/struts-2.5.dtd">
+
+<struts>
+	<!-- 配置struts2 可以受理请求的扩展名:以.action，.do,结尾或者什么都不写均可 -->
+	<constant name="struts.action.extension" value="action,do,"></constant>
+	<!-- 通配符的配置方法一：需要设置这个常量为true，然后再在action中单独设置 -->
+	<constant name="struts.enable.DynamicMethodInvocation" value="true"/>
+	<!-- 静态方法调用,不建议使用，用于直接url调用action方法 -->
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true"></constant>
+	
+	<package name="test" extends="struts-default" >
+		 
+	<!-- class不再需要类的全路径名，而是 ioc 容器中该bean的id -->
+	<action name="user-service" class="userAction">
+		<result>/success.jsp</result>
+	</action>		
+	
+		
+	</package>
+</struts>
+
+	

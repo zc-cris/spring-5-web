@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="user" class="com.zc.cris.beans.User">
+		<property name="name" value="张大帅"></property>
+	</bean>
+
+	<bean id="userServcie" class="com.zc.cris.services.UserService"></bean>
+	
+	<!-- 配置action的时候必须设置scope属性值为prototype，否则action是单例的 -->
+	<bean id="userAction" class="com.zc.cris.actions.UserAction" scope="prototype">
+		<property name="userService" ref="userServcie"></property>
+	</bean>
+
+</beans>
